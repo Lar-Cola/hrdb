@@ -35,6 +35,6 @@ public class IDGenerator extends Random{
 		for(int i = 0; i<length; i++) {
 			sb.append(ALL.indexOf(r.nextInt(ALL.length())));
 		}
-		return sb;
+		return sb.toString();
 	}
 }
