@@ -16,19 +16,26 @@ public class Bridge {
 	public Bridge(boolean debugFlag){
 		//setup portion
 		this.debug = debugFlag;
-		if (debug) {
-			System.out.println("Bridge object initialized with debug set to true...");
-		} else {
-			System.out.println("Bridge object initialized...");
-		}
+		
 		
 		try {
 			Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
 			connect = DriverManager.getConnection("");
-			statement = connect.createStatement();		
+			statement = connect.createStatement();	
+			
+			if (debug) {
+				System.out.println("Bridge object initialized with debug set to true...");
+			} else {
+				System.out.println("Bridge object initialized...");
+			}
+			
 		} catch (SQLException e) {
+			System.out.println("Bridge object didn't successfully complete...");
+			System.out.println("You probably don't have the JDBC/ODBC Driver installed yet.");
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
+			System.out.println("Bridge object didn't successfully complete...");
+			System.out.println("You probably don't have the JDBC/ODBC Driver installed yet.");
 			e.printStackTrace();
 		}
 		
