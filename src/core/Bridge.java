@@ -44,14 +44,14 @@ public class Bridge {
 	/**
 	 * Example to passing SQL queries to database this will take a person object; generate a query string from the SQLStatements class and return the string
 	 */
-	public void bridgeInsert(Person e){
+	public void bridgeInsert(Person person){
 		
 		try {
-			statement.executeUpdate(s.insertNewPerson(e));
+			statement.executeUpdate(s.insertNewPerson(person));
 		} catch (SQLException e1) {
 			System.out.println("Error in bridgeInsert method");
 			e1.printStackTrace();
-			e.printFullData(); //displays the object that caused the error
+			person.printFullData(); //displays the object that caused the error
 		}
 		
 	}
