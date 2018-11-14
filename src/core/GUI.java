@@ -19,7 +19,7 @@ public class GUI extends JFrame implements ActionListener{
 			System.out.println("GUI initialized...");
 		}
 		
-		frame.setSize(dim[0], dim[1]);
+		//frame.setSize(dim[0], dim[1]);
 		
 	}
 
