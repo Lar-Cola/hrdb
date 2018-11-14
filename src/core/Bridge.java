@@ -44,6 +44,7 @@ public class Bridge {
 		} catch (SQLException e1) {
 			System.out.println("Error in bridgeInsert method");
 			e1.printStackTrace();
+			e.printFullData(); //displays the object that caused the error
 		}
 		
 	}

@@ -2,7 +2,13 @@ package util;
 
 import java.util.Random;
 
-public class IDGenerator {	
+/**
+ * This class is to allow programmers the ability to create randomized outputs.
+ * @author mjgbenigno
+ *
+ */
+@SuppressWarnings("serial")
+public class IDGenerator extends Random{	
 	private final String UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	private final String LOWERCASE = "abcdefghijklmnopqrstuvwxyz";
 	private final String NUMBERS = "1234567890";
