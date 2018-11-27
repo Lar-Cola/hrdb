@@ -1,9 +1,9 @@
 package units;
 
 /**
- * For this project the employee depends on the existence of a person object, but is independent of a company object.
- * Most of these functions will only be used when a new object instance is created. A SQL translator would need to be 
- * used if an SQL record needs to be turned into an object.
+ * For this project the employee depends on the existence of a person object (an employee HAS to be a person), 
+ * but is independent of a company/department object. Most of these functions will only be used when a new object 
+ * instance is created. A SQL translator would need to be used if an SQL record needs to be turned into an object.
  * 
  * @author mjgbenigno
  *
@@ -44,22 +44,29 @@ public class Employee extends Person{
 	}
 	
 	/**
-	 * For testing purposes.
+	 * For testing purposes. Dangerous if combined with database.
 	 * 
 	 * Invoke this constructor if you wish to assign a different ID to an employee object, may cause unwanted problems due to a mismatch of ID's. 
 	 * If you need to retrieve the person's ID after using this constructor call getPersonID()
 	 *  
 	 * @param person an object of type Person
 	 * @param ID custom ID
+	 
+		public Employee(Person person, int ID) {
+			currentPerson = person;
+			employeeFirstName = person.getFirstName();
+			employeeLastName = person.getLastName();
+			employeeID = ID;
+			employeeSSN = person.getSSN();
+		}
 	 */
-	public Employee(Person person, int ID) {
-		currentPerson = person;
-		employeeFirstName = person.getFirstName();
-		employeeLastName = person.getLastName();
-		employeeID = ID;
-		employeeSSN = person.getSSN();
-	}
 	
+	//SET Methods
+	
+	/**
+	 * If the employee has a different phone number than the person object
+	 * @param phnNumber
+	 */
 	public void setEmployeePhoneNumber(int phnNumber) {
 		this.employeePhoneNumber = phnNumber;
 	}
@@ -76,16 +83,21 @@ public class Employee extends Person{
 		this.empBenefit = benefit;
 	}
 	
+	//GET Methods
+	
 	public String getEmployeeFirstName() {
-		return this.employeeFirstName;
+		if(this.employeeFirstName == null) return this.currentPerson.firstName;
+		else return this.employeeFirstName;
 	}
 	
 	public String getEmployeeeLastName() {
-		return this.employeeLastName;
+		if(this.employeeLastName == null) return this.currentPerson.lastName;
+		else return this.employeeLastName;
 	}
 	
 	public String getEmployeeFullName() {
-		return this.employeeFirstName + this.employeeLastName;
+		if(this.employeeFirstName == null || this.employeeLastName == null) return currentPerson.firstName + currentPerson.lastName;
+		else return this.employeeFirstName + this.employeeLastName;
 	}
 	
 	public long getEmployeeID() {
@@ -97,7 +109,8 @@ public class Employee extends Person{
 	}
 	
 	public int getEmployeePhoneNumber() {
-		return this.employeePhoneNumber;
+		if(this.employeePhoneNumber == 0) return this.currentPerson.personalPhoneNumber;
+		else return this.employeePhoneNumber;
 	}
 	
 	public String getEmployeeEmail() {
