@@ -3,7 +3,7 @@ package units;
 public class Person {
 	protected String firstName = null;
 	protected String lastName = null;
-	protected String SSN = null;
+	protected int SSN = -1;
 	protected int personalPhoneNumber = 0;
 	protected int ID = -1;
 	protected String personalEmailAddress = null;
@@ -22,7 +22,7 @@ public class Person {
 	 * @param SSN A person's SSN number
 	 * @param ID A person's ID number
 	 */
-	public Person(String first, String last, String SSN, int ID) {
+	public Person(String first, String last, int SSN, int ID) {
 		this.firstName = first;
 		this.lastName = last;
 		this.SSN = SSN;
@@ -37,8 +37,8 @@ public class Person {
 		this.lastName = s;
 	}
 	
-	public void setSSN(String s) {
-		this.SSN = s;
+	public void setSSN(int i) {
+		this.SSN = i;
 	}
 	
 	public void setID(int id) {
@@ -68,8 +68,8 @@ public class Person {
 		return this.firstName + this.lastName;
 	}
 	
-	public String getSSN() {
-		if(SSN == null) return "SSN was not set.";
+	public int getSSN() {
+		if(SSN == -1) System.out.println("This SSN was not set.");;
 		return this.SSN; //Returns a raw output of the SSN; Implement a security lock whenever
 	}
 	
