@@ -9,6 +9,7 @@ package units;
  *
  */
 public class Employee extends Person{
+	//basic information
 	private String employeeFirstName = null;
 	private String employeeLastName = null;
 	private int employeeID = -1; 
@@ -16,11 +17,13 @@ public class Employee extends Person{
 	private int employeePhoneNumber = 0;
 	private String employeeEmail = null;
 	private String employeeAddress = null;
-	private String employeeDescription = null;
 	
+	
+	//employee specific information
 	private double salary = -666.0;
 	private double payRate = -666.0;
 	private double overtimeRate = 1;
+	private String employeeDescription = null;
 	
 	private Person currentPerson;
 	private Benefit empBenefit;
