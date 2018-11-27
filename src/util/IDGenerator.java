@@ -28,7 +28,7 @@ public class IDGenerator extends Random{
 	/**
 	 * Generates and returns a random string of specified length.
 	 * @param length
-	 * @return
+	 * @return a string with of specified length
 	 */
 	public String generateRandomString(int length) {
 		sb = new StringBuilder(length); // create a string builder object with specified length
@@ -37,4 +37,5 @@ public class IDGenerator extends Random{
 		}
 		return sb.toString();
 	}
+		
 }

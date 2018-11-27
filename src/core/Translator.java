@@ -6,10 +6,10 @@ package core;
  *
  */
 public class Translator {
-	
+	Bridge bridge;
 	
 	public Translator()	{
-		
+		bridge = new Bridge();
 	}
 	
 	

@@ -2,6 +2,9 @@ package units;
 
 /**
  * For this project the employee depends on the existence of a person object, but is independent of a company object.
+ * Most of these functions will only be used when a new object instance is created. A SQL translator would need to be 
+ * used if an SQL record needs to be turned into an object.
+ * 
  * @author mjgbenigno
  *
  */
@@ -50,27 +53,6 @@ public class Employee extends Person{
 		employeeID = ID;
 		employeeSSN = person.getSSN();
 	}
-	
-	/*
-	 * If there was no database then this would have been used. Left in for reference or for testing.
-	 * 
-		public void setEmployeeDepartment(Department department) {
-			this.employeeDepartment = department;
-			this.departmentID = department.getDepartmentID();
-			department.addDepartmentEmployee(this);
-		}
-		
-		public void setEmployeeCompany(Company company) {
-			this.employeeCompany = company;
-			this.companyID = company.getCompanyID();
-			company.addCompanyEmployee(this);
-		}
-		
-		public String getEmployeeDepartment() {
-			if(employeeDepartment == null) return "Department was not set.";
-			return this.employeeDepartment.getDepartmentName();
-		}
-	*/
 	
 	public void setEmployeePhoneNumber(int phnNumber) {
 		this.employeePhoneNumber = phnNumber;
@@ -136,6 +118,11 @@ public class Employee extends Person{
 	
 	public Person getPersonalReference() {
 		return this.currentPerson;
+	}
+	
+	//TODO 
+	public void getEmployeePayroll() {
+		
 	}
 	
 	/**

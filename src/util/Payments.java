@@ -2,10 +2,14 @@ package util;
 
 import units.Employee;
 
+/**
+ * 
+ * @author mjgbenigno
+ *
+ */
 public class Payments {
 	
 	public Payments() {
-		
 	}
 	
 	public double getPayPerHour(Employee e, double hours) {

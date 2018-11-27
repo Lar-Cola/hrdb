@@ -41,13 +41,38 @@ public class Bridge {
 		
 	}
 	
+	public Bridge() {
+		
+		try {
+			Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+			connect = DriverManager.getConnection("");
+			statement = connect.createStatement();	
+			
+			if (debug) {
+				System.out.println("Bridge object initialized with debug set to true...");
+			} else {
+				System.out.println("Bridge object initialized...");
+			}
+			
+		} catch (SQLException e) {
+			System.out.println("Bridge object didn't successfully complete...");
+			System.out.println("You probably don't have the JDBC/ODBC Driver installed yet.");
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			System.out.println("Bridge object didn't successfully complete...");
+			System.out.println("You probably don't have the JDBC/ODBC Driver installed yet.");
+			e.printStackTrace();
+		}
+		
+	}
+	
 	/**
 	 * Example to passing SQL queries to database this will take a person object; generate a query string from the SQLStatements class and return the string
 	 */
-	public void bridgeInsert(Person person){
+	public void bridgeInsert(Person person,String table){
 		
 		try {
-			statement.executeUpdate(s.insertNewPerson(person));
+			statement.executeUpdate(s.insertNewPerson(person,table));
 		} catch (SQLException e1) {
 			System.out.println("Error in bridgeInsert method");
 			e1.printStackTrace();
@@ -55,4 +80,5 @@ public class Bridge {
 		}
 		
 	}
+
 }
