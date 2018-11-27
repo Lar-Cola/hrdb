@@ -12,7 +12,7 @@ public class Employee extends Person{
 	private String employeeFirstName = null;
 	private String employeeLastName = null;
 	private int employeeID = -1; 
-	private String employeeSSN = null;
+	private int employeeSSN = -1;
 	private int employeePhoneNumber = 0;
 	private String employeeEmail = null;
 	private String employeeAddress = null;
@@ -84,7 +84,7 @@ public class Employee extends Person{
 		return this.employeeID;
 	}
 	
-	public String getEmployeeSSN() {
+	public int getEmployeeSSN() {
 		return this.employeeSSN;
 	}
 	
@@ -153,6 +153,7 @@ public class Employee extends Person{
 		System.out.println("Referenced Person First Name: " + this.currentPerson.getFirstName());
 		System.out.println("Referenced Person Last Name: " + this.currentPerson.getLastName());
 	}
+
 
 
 	
