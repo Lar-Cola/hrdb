@@ -9,7 +9,7 @@ public class Person {
 	protected String personalEmailAddress = null;
 	
 	/**
-	 * Create a person without an identity. Invoked when creating an employee object
+	 * Create a person without an identity.
 	 */
 	public Person() {
 		
