@@ -29,6 +29,8 @@ public class Person {
 		this.ID = ID;
 	}
 	
+	//SET Methods
+	
 	public void setFirstName(String s) {
 		this.firstName = s;
 	}
@@ -52,6 +54,8 @@ public class Person {
 	public void setPersonalEmail(String email) {
 		this.personalEmailAddress = email;
 	}
+	
+	//GET Methods
 	
 	public String getFirstName() {
 		if(firstName == null) return "First name was not set.";
