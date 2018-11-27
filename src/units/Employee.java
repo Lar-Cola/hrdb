@@ -23,6 +23,7 @@ public class Employee extends Person{
 	private double overtimeRate = 1;
 	
 	private Person currentPerson;
+	private Benefit empBenefit;
 	
 	/**
 	 * Invoke this constructor IF and ONLY IF a person already exists. 
@@ -68,6 +69,10 @@ public class Employee extends Person{
 		this.overtimeRate = rate;
 	}
 	
+	public void setEmployeeBenefit(Benefit benefit) {
+		this.empBenefit = benefit;
+	}
+	
 	public String getEmployeeFirstName() {
 		return this.employeeFirstName;
 	}
@@ -106,6 +111,10 @@ public class Employee extends Person{
 	
 	public double getOvertimeRate() {
 		return this.overtimeRate;
+	}
+	
+	public Benefit getEmployeeBenefit() {
+		return this.empBenefit;
 	}
 	
 	public String getEmployeeAddress() {

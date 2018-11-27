@@ -1,10 +1,10 @@
 package units;
 
-public class Benefits {
+public class Benefit {
 	private String benefitName = null;
 	private int benefitID = -1;
 	
-	public Benefits(String name, int ID) {
+	public Benefit(String name, int ID) {
 		this.benefitName = name;
 		this.benefitID = ID;
 	}
