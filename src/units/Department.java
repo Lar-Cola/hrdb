@@ -25,13 +25,16 @@ public class Department {
 	public void setDepartmentID(int ID) {
 		this.departmentID = ID;
 	}
-	
+	/**
+	 * Adds an Employee object to the ArrayList of a Department object
+	 * @param newemployee employee object to add to list
+	 */
 	public void addDepartmentEmployee(Employee newemployee) {
-		departmentEmployees.add(newemployee);
+		this.departmentEmployees.add(newemployee);
 	}
 	
 	public int getDepartmentSize() {
-		return departmentEmployees.size();
+		return this.departmentEmployees.size();
 	}
 	
 	/**
