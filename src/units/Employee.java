@@ -83,6 +83,10 @@ public class Employee extends Person{
 		this.empBenefit = benefit;
 	}
 	
+	public void setEmployeeAddress(String address) {
+		this.employeeAddress = address;
+	}
+	
 	//GET Methods
 	
 	public String getEmployeeFirstName() {
@@ -114,7 +118,8 @@ public class Employee extends Person{
 	}
 	
 	public String getEmployeeEmail() {
-		return this.employeeEmail;
+		if(this.employeeEmail == null) return this.currentPerson.personalEmailAddress;
+		else return this.employeeEmail;
 	}
 	
 	public double getEmployeeSalary() {
@@ -129,8 +134,8 @@ public class Employee extends Person{
 		return this.overtimeRate;
 	}
 	
-	public Benefit getEmployeeBenefit() {
-		return this.empBenefit;
+	public String getEmployeeBenefitName() {
+		return this.empBenefit.getBenefitName();
 	}
 	
 	public String getEmployeeAddress() {
