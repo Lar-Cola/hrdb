@@ -16,12 +16,9 @@ public class SQLStatements {
 		
 	}
 	
+	//as of 11/26 no person table exists; this can be just used as an example
 	public String insertNewPerson(Person newperson) {
 		return "INSERT INTO (firstName, lastName, ssn, phone, email) " + "VALUES(" + newperson.getFirstName() + "," + newperson.getLastName() + "," + newperson.getSSN() + "," + newperson.getPersonalPhoneNumber() + "," + newperson.getPersonalEmail()+")";
-	}
-	
-	public String insertNewPerson(Person newperson, String table) {
-		return "INSERT INTO "+table+"(firstName, lastName, ssn, phone, email) " + "VALUES(" + newperson.getFirstName() + "," + newperson.getLastName() + "," + newperson.getSSN() + "," + newperson.getPersonalPhoneNumber() + "," + newperson.getPersonalEmail()+")";
 	}
 	
 	public String insertNewEmployee(Employee newemployee) {
@@ -30,6 +27,25 @@ public class SQLStatements {
 	
 	public String insertNewCompany(Company newcompany) {
 		return null;
+	}
+	
+	
+	//retrieve methods
+	
+	public String getEmployee(int ID) {
+		return null;
+	}
+	
+	public String getEmployee(String firstName, String lastName) {
+		return null;
+	}
+	
+	public String getEmployee(String name) {
+		return null;
+	}
+	
+	public String getHealthBenefit(String firstName, String lastName) {
+		return "Select empID, SSN_num FROM empInfo WHERE first_name="+firstName+")AND(last_name="+lastName+")";
 	}
 	
 }
