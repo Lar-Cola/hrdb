@@ -21,10 +21,6 @@ public class IDGenerator extends Random{
 		r = new Random();
 	}
 	
-	public IDGenerator(long seed) {
-		r = new Random(seed);
-	}
-	
 	/**
 	 * Generates and returns a random string of specified length.
 	 * @param length
