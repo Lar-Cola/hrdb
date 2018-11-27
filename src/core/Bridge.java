@@ -13,8 +13,11 @@ public class Bridge {
 	private Statement statement;
 	SQLStatements s = new SQLStatements();
 	
+	/**
+	 * Use this constructor to allow debug mode.
+	 * @param debugFlag true or false
+	 */
 	public Bridge(boolean debugFlag){
-		//setup portion
 		this.debug = debugFlag;
 		
 		
@@ -30,17 +33,24 @@ public class Bridge {
 			}
 			
 		} catch (SQLException e) {
-			System.out.println("Bridge object didn't successfully complete...");
-			System.out.println("You probably don't have the JDBC/ODBC Driver installed yet.");
+			if (debug) {
+				System.out.println("Bridge object didn't successfully complete...");
+				System.out.println("You probably don't have the JDBC/ODBC Driver installed yet.");
+			}
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			System.out.println("Bridge object didn't successfully complete...");
-			System.out.println("You probably don't have the JDBC/ODBC Driver installed yet.");
+			if (debug) {
+				System.out.println("Bridge object didn't successfully complete...");
+				System.out.println("You probably don't have the JDBC/ODBC Driver installed yet.");
+			}
 			e.printStackTrace();
 		}
 		
 	}
 	
+	/**
+	 * This constructor will initialize 
+	 */
 	public Bridge() {
 		
 		try {
@@ -48,19 +58,9 @@ public class Bridge {
 			connect = DriverManager.getConnection("");
 			statement = connect.createStatement();	
 			
-			if (debug) {
-				System.out.println("Bridge object initialized with debug set to true...");
-			} else {
-				System.out.println("Bridge object initialized...");
-			}
-			
 		} catch (SQLException e) {
-			System.out.println("Bridge object didn't successfully complete...");
-			System.out.println("You probably don't have the JDBC/ODBC Driver installed yet.");
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			System.out.println("Bridge object didn't successfully complete...");
-			System.out.println("You probably don't have the JDBC/ODBC Driver installed yet.");
 			e.printStackTrace();
 		}
 		
@@ -74,11 +74,28 @@ public class Bridge {
 		try {
 			statement.executeUpdate(s.insertNewPerson(person,table));
 		} catch (SQLException e1) {
-			System.out.println("Error in bridgeInsert method");
+			
 			e1.printStackTrace();
-			person.printFullData(); //displays the object that caused the error
+			if (debug) {
+				System.out.println("Error in bridgeInsert method");
+				person.printFullData(); //displays the object to console that caused the error
+			}
+			
 		}
 		
+	}
+	
+	public void bridgeInsert (Person person) {
+		try {
+			statement.executeUpdate(s.insertNewPerson(person));
+		} catch (SQLException e1) {
+			
+			e1.printStackTrace();
+			if (debug) {
+				System.out.println("Error in bridgeInsert method");
+				person.printFullData(); //displays the object to console that caused the error
+			}
+		}
 	}
 
 }
