@@ -17,11 +17,11 @@ public class SQLStatements {
 	}
 	
 	public String insertNewPerson(Person newperson) {
-		return "INSERT INTO (firstName, lastName, ssn, phone, email) " + "VALUES(" + newperson.getFirstName() + "," + newperson.getLastName() + "," + newperson.getSSN() + "," + newperson.getPersonalPhoneNumber() + "," + newperson.getPersonalEmail();
+		return "INSERT INTO (firstName, lastName, ssn, phone, email) " + "VALUES(" + newperson.getFirstName() + "," + newperson.getLastName() + "," + newperson.getSSN() + "," + newperson.getPersonalPhoneNumber() + "," + newperson.getPersonalEmail()+")";
 	}
 	
 	public String insertNewPerson(Person newperson, String table) {
-		return "INSERT INTO "+table+"(firstName, lastName, ssn, phone, email) " + "VALUES(" + newperson.getFirstName() + "," + newperson.getLastName() + "," + newperson.getSSN() + "," + newperson.getPersonalPhoneNumber() + "," + newperson.getPersonalEmail();
+		return "INSERT INTO "+table+"(firstName, lastName, ssn, phone, email) " + "VALUES(" + newperson.getFirstName() + "," + newperson.getLastName() + "," + newperson.getSSN() + "," + newperson.getPersonalPhoneNumber() + "," + newperson.getPersonalEmail()+")";
 	}
 	
 	public String insertNewEmployee(Employee newemployee) {
