@@ -15,6 +15,8 @@ public class Employee extends Person{
 	private String employeeSSN = null;
 	private int employeePhoneNumber = 0;
 	private String employeeEmail = null;
+	private String employeeAddress = null;
+	private String employeeDescription = null;
 	
 	private double salary = -666.0;
 	private double payRate = -666.0;
@@ -106,6 +108,14 @@ public class Employee extends Person{
 		return this.overtimeRate;
 	}
 	
+	public String getEmployeeAddress() {
+		return this.employeeAddress;
+	}
+
+	public String getJobDescription() {
+		return this.employeeDescription;
+	}
+	
 	/**
 	 * Retrieves the ID of the person that this employee is based on. 
 	 * If the object was constructed without specifying the ID then this should reflect what getEmployeeID() shows.
@@ -143,5 +153,7 @@ public class Employee extends Person{
 		System.out.println("Referenced Person First Name: " + this.currentPerson.getFirstName());
 		System.out.println("Referenced Person Last Name: " + this.currentPerson.getLastName());
 	}
+
+
 	
 }
