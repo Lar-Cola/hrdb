@@ -72,7 +72,7 @@ public class Bridge {
 	public void bridgeInsert(Person person,String table){
 		
 		try {
-			statement.executeUpdate(s.insertNewPerson(person,table));
+			statement.executeUpdate(s.insertNewPerson(person));
 		} catch (SQLException e1) {
 			
 			e1.printStackTrace();
