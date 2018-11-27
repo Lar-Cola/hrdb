@@ -25,7 +25,7 @@ public class SQLStatements {
 	}
 	
 	public String insertNewEmployee(Employee newemployee) {
-		return null;
+		return "INSERT INTO empInfo VALUES("+newemployee.getEmployeeFirstName()+","+newemployee.getEmployeeeLastName()+","+newemployee.getEmployeePhoneNumber()+","+newemployee.getEmployeeAddress()+","+newemployee.getEmployeeSSN()+","+newemployee.getJobDescription()+")";
 	}
 	
 	public String insertNewCompany(Company newcompany) {
