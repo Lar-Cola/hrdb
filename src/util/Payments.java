@@ -34,7 +34,6 @@ public class Payments {
 		return (e.getEmployeePayRate()* hours) + (e.getOvertimeRate() * overtimeHours);
 	}
 	
-	
 	public double getPayPerHour(double payrate, double hours) {
 		return payrate * hours; 
 	}

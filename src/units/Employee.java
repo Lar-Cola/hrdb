@@ -28,6 +28,8 @@ public class Employee extends Person{
 	private Person currentPerson;
 	private Benefit empBenefit;
 	
+	//TODO create constructor to handle creation of both person objects when an empty employee object is created.
+	
 	/**
 	 * Invoke this constructor IF and ONLY IF a person already exists. 
 	 * If a person does not exist then create a new person object, then pass that object to this constructor.
