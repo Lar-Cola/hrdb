@@ -7,8 +7,6 @@ import units.*;
  * The purpose of this class is to build usable SQL statements can be used to build simple/general SQL statements
  * or can build complex statements as needed.
  * 
- * For now this only functions one way; from code to SQL.
- * 
  * @author mjgbenigno
  *
  */
