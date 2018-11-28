@@ -16,7 +16,7 @@ public class SQLStatements {
 		
 	}
 	
-	//as of 11/26 no person table exists; this can be just used as an example
+	//as of 11/26 no person table exists; this can be just used as an example/template
 	public String insertNewPerson(Person newperson) {
 		return "INSERT INTO (firstName, lastName, ssn, phone, email) " + "VALUES(" + newperson.getFirstName() + "," + newperson.getLastName() + "," + newperson.getSSN() + "," + newperson.getPersonalPhoneNumber() + "," + newperson.getPersonalEmail()+")";
 	}
@@ -41,11 +41,11 @@ public class SQLStatements {
 	}
 	
 	public String getEmployee(String name) {
-		return null;
+		return "SELECT empID, SSN_num FROM empInfo WHERE first_name="+name+")OR(last_name="+name+")";
 	}
 	
 	public String getHealthBenefit(String firstName, String lastName) {
-		return "Select empID, SSN_num FROM empInfo WHERE first_name="+firstName+")AND(last_name="+lastName+")";
+		return "SELECT empID, SSN_num FROM empInfo WHERE first_name="+firstName+")AND(last_name="+lastName+")";
 	}
 	
 }
