@@ -20,7 +20,6 @@ public class Bridge {
 	public Bridge(boolean debugFlag){
 		this.debug = debugFlag;
 		
-		
 		try {
 			Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
 			connect = DriverManager.getConnection("");
