@@ -14,7 +14,7 @@ public class Bridge {
 	SQLStatements s = new SQLStatements();
 	
 	/**
-	 * Use this constructor to allow debug mode.
+	 * Setting this to true will allow debug outputs to be printed to the console. Setting it to false will remove those 
 	 * @param debugFlag true or false
 	 */
 	public Bridge(boolean debugFlag){
@@ -57,6 +57,26 @@ public class Bridge {
 				System.out.println("Error in bridgeInsert method");
 				person.printFullData(); //displays the object to console that caused the error
 			}
+		}
+	}
+	
+	public void bridgeInsert (Employee employee) {
+		try {
+			statement.executeUpdate(s.insertNewEmployee(employee));
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+			if (debug) {
+				System.out.println("Error in bridgeInsert method");
+				employee.printFullData();
+			}
+		}
+	}
+	
+	public void bridgeInsert (Department dept) {
+		try {
+			statement.executeUpdate(s.insertNewDepartment(dept));
+		} catch (SQLException e1) {
+			e1.printStackTrace();
 		}
 	}
 
