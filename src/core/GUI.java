@@ -21,6 +21,10 @@ public class GUI extends JFrame implements ActionListener{
 		
 		//Compose GUI Elements Below
 		
+		setSize(dim[0],dim[1]);
+		setTitle("HR Database Demo.");
+		
+		
 		
 	}
 
