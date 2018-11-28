@@ -1,6 +1,8 @@
 package units;
 
+
 public class Benefit {
+	//necessary variables
 	private String benefitName = null;
 	private int benefitID = -1;
 	

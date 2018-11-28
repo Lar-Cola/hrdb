@@ -10,5 +10,6 @@ public class Main {
 		g = new GUI(debugFlag);
 		g.setVisible(true);
 		b = new Bridge(debugFlag);
+		
 	}
 }
