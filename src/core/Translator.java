@@ -9,7 +9,7 @@ public class Translator {
 	Bridge bridge;
 	
 	public Translator()	{
-		bridge = new Bridge();
+		bridge = new Bridge(false);
 	}
 	
 	
