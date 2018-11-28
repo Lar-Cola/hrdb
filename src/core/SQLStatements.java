@@ -33,11 +33,11 @@ public class SQLStatements {
 	//retrieve methods
 	
 	public String getEmployee(int ID) {
-		return null;
+		return "SELECT empID, SSN_num FROM empInfo WHERE empID="+ID+")";
 	}
 	
 	public String getEmployee(String firstName, String lastName) {
-		return null;
+		return "SELECT empID, SSN_num FROM empInfo WHERE first_name="+firstName+")AND(last_name="+lastName+")";
 	}
 	
 	public String getEmployee(String name) {
