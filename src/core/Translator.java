@@ -7,9 +7,13 @@ package core;
  */
 public class Translator {
 	Bridge bridge;
+	SQLStatements sql;
 	
 	public Translator()	{
-		bridge = new Bridge(false);
+		bridge = new Bridge(false); //access to bridge commands
+		sql = new SQLStatements(); //access to SQLStatements commands
+		
+		
 	}
 	
 	
