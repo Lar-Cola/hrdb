@@ -28,7 +28,7 @@ public class Employee extends Person{
 	private Person currentPerson;
 	private Benefit empBenefit;
 	
-	//TODO create constructor to handle creation of both person objects when an empty employee object is created.
+	//TODO maybe create constructor to handle creation of both person objects when an empty employee object is created.
 	
 	/**
 	 * Invoke this constructor IF and ONLY IF a person already exists. 
@@ -44,24 +44,6 @@ public class Employee extends Person{
 		employeeID = person.getID();
 		employeeSSN = person.getSSN();
 	}
-	
-	/**
-	 * For testing purposes. Dangerous if combined with database.
-	 * 
-	 * Invoke this constructor if you wish to assign a different ID to an employee object, may cause unwanted problems due to a mismatch of ID's. 
-	 * If you need to retrieve the person's ID after using this constructor call getPersonID()
-	 *  
-	 * @param person an object of type Person
-	 * @param ID custom ID
-	 
-		public Employee(Person person, int ID) {
-			currentPerson = person;
-			employeeFirstName = person.getFirstName();
-			employeeLastName = person.getLastName();
-			employeeID = ID;
-			employeeSSN = person.getSSN();
-		}
-	 */
 	
 	//SET Methods
 	
