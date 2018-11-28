@@ -29,6 +29,10 @@ public class SQLStatements {
 		return null;
 	}
 	
+	public String insertNewDepartment(Department dept) {
+		return null;
+	}
+	
 	
 	//retrieve methods
 	
