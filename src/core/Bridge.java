@@ -48,43 +48,6 @@ public class Bridge {
 		
 	}
 	
-	/**
-	 * This constructor will initialize 
-	 */
-	public Bridge() {
-		
-		try {
-			Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
-			connect = DriverManager.getConnection("");
-			statement = connect.createStatement();	
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
-		
-	}
-	
-	/**
-	 * Example to passing SQL queries to database this will take a person object; generate a query string from the SQLStatements class and return the string
-	 */
-	public void bridgeInsert(Person person,String table){
-		
-		try {
-			statement.executeUpdate(s.insertNewPerson(person));
-		} catch (SQLException e1) {
-			
-			e1.printStackTrace();
-			if (debug) {
-				System.out.println("Error in bridgeInsert method");
-				person.printFullData(); //displays the object to console that caused the error
-			}
-			
-		}
-		
-	}
-	
 	public void bridgeInsert (Person person) {
 		try {
 			statement.executeUpdate(s.insertNewPerson(person));
