@@ -8,6 +8,7 @@ public class Main {
 	public static void main(String[] args) {
 		System.out.println("This system works if you see initialization messages below.");
 		g = new GUI(debugFlag);
+		g.setVisible(true);
 		b = new Bridge(debugFlag);
 	}
 }
