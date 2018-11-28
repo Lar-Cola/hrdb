@@ -3,7 +3,7 @@ package util;
 import units.Employee;
 
 /**
- * 
+ * Calculates payments.
  * @author mjgbenigno
  *
  */
