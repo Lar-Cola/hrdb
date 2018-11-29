@@ -33,6 +33,10 @@ public class SQLStatements {
 		return null;
 	}
 	
+	public String insertNewEmp(Employee newemployee){
+		return "INSERT INTO empInfo VALUES(?,?,?,?,?,?,?,?)";
+	}
+	
 	
 	//retrieve methods
 	
