@@ -33,6 +33,10 @@ public class SQLStatements {
 		return "INSERT INTO empInfo VALUES(?,?,?,?,?,?,?,?)";
 	}
 	
+	public String insertNewCoverage(Benefit benefit, Employee employee) {
+		return "";
+	}
+	
 	
 	//retrieve methods
 	public String getEmployee(int ID) {
