@@ -25,12 +25,8 @@ public class SQLStatements {
 		return "INSERT INTO empInfo VALUES("+newemployee.getEmployeeFirstName()+","+newemployee.getEmployeeeLastName()+","+newemployee.getEmployeePhoneNumber()+","+newemployee.getEmployeeAddress()+","+newemployee.getEmployeeSSN()+","+newemployee.getJobDescription()+")";
 	}
 	
-	public String insertNewCompany(Company newcompany) {
-		return null;
-	}
-	
 	public String insertNewDepartment(Department dept) {
-		return null;
+		return "INSERT INTO Departments VALUES("+dept.getDepartmentID()+","+dept.getDepartmentName()+")";
 	}
 	
 	public String insertNewEmp(Employee newemployee){
@@ -39,7 +35,6 @@ public class SQLStatements {
 	
 	
 	//retrieve methods
-	
 	public String getEmployee(int ID) {
 		return "SELECT empID, SSN_num FROM empInfo WHERE empID="+ID+")";
 	}
