@@ -1,5 +1,6 @@
 package units;
 
+import util.Payments;
 /**
  * For this project the employee depends on the existence of a person object (an employee HAS to be a person), 
  * but is independent of a company/department object. Most of these functions will only be used when a new object 
@@ -20,15 +21,22 @@ public class Employee extends Person{
 	
 	
 	//employee specific information
+	private boolean salaried = false;// set to true if employee is not paid per hour.
 	private double salary = -666.0;
-	private double payRate = -666.0;
+	private double payRatePerHour = -666.0;
 	private double overtimeRate = 1;
 	private String employeeDescription = null;
 	
+	//relation values
 	private Person currentPerson;
 	private Benefit empBenefit;
+	private int empBenefitID;
+	private Department empDept;
+	private int empDepartmentID;
 	
 	//TODO maybe create constructor to handle creation of both person objects when an empty employee object is created.
+	
+	
 	
 	/**
 	 * Invoke this constructor IF and ONLY IF a person already exists. 
@@ -65,11 +73,23 @@ public class Employee extends Person{
 	
 	public void setEmployeeBenefit(Benefit benefit) {
 		this.empBenefit = benefit;
+		this.empBenefitID = benefit.getBenefitID();
 	}
 	
 	public void setEmployeeAddress(String address) {
 		this.employeeAddress = address;
 	}
+	
+	public void setEmployeeDepartment(Department dept) {
+		this.empDept = dept;
+		this.empDepartmentID = dept.getDepartmentID();
+	}
+	
+	public void setSalariedStatus(boolean salaryPay) {
+		this.salaried = salaryPay;
+	}
+	
+	
 	
 	//GET Methods
 	
@@ -111,7 +131,7 @@ public class Employee extends Person{
 	}
 	
 	public double getEmployeePayRate() {
-		return this.payRate;
+		return this.payRatePerHour;
 	}
 	
 	public double getOvertimeRate() {
@@ -122,12 +142,24 @@ public class Employee extends Person{
 		return this.empBenefit.getBenefitName();
 	}
 	
+	public int getEmployeeBenefitID() {
+		return this.empBenefitID;
+	}
+	
 	public String getEmployeeAddress() {
 		return this.employeeAddress;
 	}
 
 	public String getJobDescription() {
 		return this.employeeDescription;
+	}
+	
+	public String getEmployeeDepartment() {
+		return this.empDept.getDepartmentName();
+	}
+	
+	public int getEmployeeDepartmentID() {
+		return this.empDepartmentID;
 	}
 	
 	/**
@@ -144,11 +176,28 @@ public class Employee extends Person{
 		return this.currentPerson;
 	}
 	
-	//TODO 
-	public void getEmployeePayroll() {
+	public double getEmployeePayroll(double hoursWorked) {
+		Payments payments = new Payments();
 		
+		if (!salaried) {
+			if (hoursWorked > 40) {
+				//overtime pay
+				return payments.getPayPerHour(this, 40.0, hoursWorked - 40.0);
+			} else {
+				//regular pay
+				return payments.getPayPerHour(this, hoursWorked);
+			} 
+		} else if (salaried) {
+			return this.salary;
+		}
+		
+		//this event shouldn't happen; if it does something went wrong.
+		return -987654321.0;
 	}
 	
+	public boolean getSalaryStatus() {
+		return this.salaried;
+	}
 	/**
 	 * Testing purposes.
 	 */
