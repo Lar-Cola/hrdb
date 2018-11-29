@@ -1,8 +1,10 @@
 package util;
 
+import units.*;
+
 /**
  * The purpose of this class is to provide programmers an easier way to validate inputs
- * @author Marc Benigno
+ * @author mjgbenigno
  *
  */
 public class InputValidation {
@@ -48,5 +50,16 @@ public class InputValidation {
 		return result;
 	}
 	
-	
+	//TODO check if entry exists in the SQL database
+	/**
+	 * 
+	 * @param emp
+	 * @return
+	 */
+	public boolean checkEmployeeExist(Employee emp) {
+		boolean exist = false;
+		//send sql statement to database; ask for employee ID, if null then return false else return true
+		
+		return exist;
+	}
 }
